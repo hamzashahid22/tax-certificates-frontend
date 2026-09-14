@@ -1,0 +1,61 @@
+/* Dimensions and positions are in PDF points (72 points per inch). */
+.certificate-scroll { width: 100%; overflow-x: auto; padding: 0 16px 12px; }
+.certificate-paper {
+  position: relative;
+  width: 595.28pt;
+  height: 841.89pt;
+  flex: none;
+  margin: 0 auto;
+  background: #fff;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12pt;
+  font-weight: 400;
+  line-height: 14.256pt;
+  box-shadow: 0 4px 24px #00000018;
+}
+.certificate-paper * { box-sizing: border-box; }
+.certificate-logo { position: absolute; top: 28pt; left: 202.64pt; width: 190pt; height: 70pt; display: flex; align-items: center; justify-content: center; }
+.certificate-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.certificate-title { position: absolute; top: 105.1pt; left: 36.266pt; margin: 0; font: bold 12pt/14.256pt Arial, Helvetica, sans-serif; white-space: nowrap; }
+.certificate-serial { position: absolute; top: 139.6pt; left: 36.266pt; display: flex; gap: 3pt; }
+.certificate-serial .certificate-editable { width: 110pt; }
+.certificate-original { position: absolute; top: 139.6pt; left: 288.844pt; }
+.certificate-row { position: absolute; left: 36.266pt; right: 36.266pt; display: grid; grid-template-columns: 252.578pt minmax(0, 1fr); }
+.certificate-value { min-width: 0; min-height: 14.256pt; overflow-wrap: anywhere; }
+.certificate-line { border-bottom: .75pt solid #000; }
+.certificate-words .certificate-label { padding-top: 7.5pt; }
+.certificate-words .certificate-value { min-height: 28.512pt; }
+.certificate-person-label { position: absolute; left: 36.266pt; top: 249pt; width: 240.578pt; white-space: normal; overflow-wrap: anywhere; }
+.certificate-person-name, .certificate-person-address, .certificate-person-note { position: absolute; left: 288.844pt; right: 36.266pt; }
+.certificate-person-name { top: 247pt; min-height: 14.256pt; }
+.certificate-person-address { top: 275pt; min-height: 42.768pt; overflow-wrap: anywhere; padding-top: 8pt; }
+.certificate-person-note { top: 345pt; white-space: nowrap; }
+.certificate-declaration { position: absolute; left: 36.266pt; top: 575.2pt; }
+.certificate-company-heading { position: absolute; left: 36.266pt; top: 623.9pt; }
+.certificate-company-address .certificate-value { position: relative; white-space: pre-line; min-height: 36.012pt; line-height: 18.006pt; }
+.certificate-footer { position: absolute; left: 36.266pt; top: 748pt; white-space: nowrap; }
+.certificate-editable { display: block; position: relative; min-height: 14.256pt; width: 100%; }
+.certificate-display { display: block; min-height: 14.256pt; overflow-wrap: anywhere; }
+.certificate-editable input, .certificate-editable select {
+  position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; padding: 0;
+  border: 0; border-radius: 0; outline: 0; background: transparent;
+  font: inherit; color: transparent; opacity: 0; cursor: text;
+}
+.certificate-editable select { cursor: pointer; }
+.certificate-editable:hover { background: #eef2ff; }
+.certificate-editable:focus-within { outline: 1px solid #6366f1; background: #fff; }
+.certificate-editable:focus-within .certificate-display { visibility: hidden; }
+.certificate-editable:focus-within input, .certificate-editable:focus-within select { opacity: 1; color: #000; }
+@media print {
+  html, body, #root { margin: 0 !important; padding: 0 !important; min-height: 0 !important; background: white !important; }
+  body:has(.certificate-paper) .MuiModal-root { display: none !important; }
+  .certificate-workspace { display: block !important; min-height: 0 !important; padding: 0 !important; background: #fff !important; }
+  .certificate-scroll { overflow: visible; margin: 0; padding: 0; }
+  .certificate-paper { margin: 0; box-shadow: none; break-inside: avoid; }
+  .certificate-editable { outline: none !important; background: transparent !important; }
+  .certificate-editable input, .certificate-editable select { display: none !important; }
+  .certificate-editable .certificate-display { visibility: visible !important; }
+}
+
+.certificate-company-address .certificate-value::after { content: ""; position: absolute; top: 17.256pt; left: 0; right: 0; border-bottom: .75pt solid #000; pointer-events: none; }

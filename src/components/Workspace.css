@@ -1,0 +1,42 @@
+.workspace-nav { position: sticky; top: 0; z-index: 40; background: #fff; border-bottom: 1px solid #d9e2ed; }
+.workspace-nav-inner { max-width: 1440px; margin: auto; padding: 0 40px; min-height: 80px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.workspace-brand { display: flex; align-items: center; gap: 12px; padding: 0; border: 0; background: transparent; cursor: pointer; text-align: left; }
+.workspace-brand-icon { display: flex; align-items: center; justify-content: center; width: 42px; height: 46px; border-radius: 10px; background: #243750; color: #fff; }
+.workspace-brand-name { display: block; font: 700 19px/1.3 Arial, Helvetica, sans-serif; color: #17243b; letter-spacing: .5px; }
+.workspace-brand-subtitle { display: block; font-size: 11px; color: #697b93; margin-top: 3px; }
+.workspace-nav-actions { display: flex; align-items: center; gap: 10px; }
+.workspace-button { display: inline-flex; justify-content: center; align-items: center; gap: 8px; min-height: 42px; padding: 10px 18px; font: 600 13px/1.4 Arial, Helvetica, sans-serif; border: 1px solid #ccd7e5; border-radius: 8px; background: #fff; color: #344860; cursor: pointer; text-decoration: none; transition: background .15s, border-color .15s; }
+.workspace-button:hover { background: #f0f4f9; border-color: #aebed2; }
+.workspace-button-primary { background: #243750; border-color: #243750; color: #fff; box-shadow: 0 2px 4px #24375015; }
+.workspace-button-primary:hover { background: #304b6c; border-color: #304b6c; }
+.workspace-button-danger { color: #fff; background: #b73849; border-color: #b73849; }
+.workspace-button-danger:hover { background: #992b3b; border-color: #992b3b; }
+.workspace-button:disabled, .workspace-close:disabled { cursor: wait; opacity: .6; }
+.workspace-dialog { border: 1px solid #e0e6ef; color: #17243b; }
+.workspace-dialog-header { position: relative; padding: 28px 28px 24px; border-bottom: 1px solid #e3e9f1; background: #f8fafc; }
+.workspace-dialog-icon { display: flex; align-items: center; justify-content: center; width: 46px; height: 46px; border: 1px solid #dbe4f1; border-radius: 12px; background: #edf2fa; color: #355780; margin-bottom: 18px; }
+.workspace-dialog-icon-danger { color: #b73849; background: #fff0f2; border-color: #f0d8dd; }
+.workspace-dialog-header h2 { font: 700 23px/1.3 Arial, Helvetica, sans-serif; margin: 0 0 8px; letter-spacing: -.4px; }
+.workspace-dialog-header p { font-size: 13px; color: #5c6c82; line-height: 1.6; margin: 0; }
+.workspace-close { position: absolute; top: 22px; right: 22px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border: 1px solid #dce4ef; border-radius: 8px; background: white; color: #64748b; cursor: pointer; }
+.workspace-close:hover { background: #edf2f8; color: #243750; }
+.workspace-dialog-body { padding: 24px 28px; overflow-y: auto; }
+.workspace-dialog-body p { margin: 0; font-size: 14px; line-height: 1.7; color: #53647c; }
+.workspace-dialog-footer { display: flex; justify-content: flex-end; gap: 10px; padding: 18px 28px; background: #f8fafc; border-top: 1px solid #e3e9f1; }
+.workspace-form { display: flex; flex-direction: column; gap: 20px; }
+.workspace-field label { display: flex; align-items: center; justify-content: space-between; font-size: 13px; font-weight: 600; color: #2b3d55; margin-bottom: 8px; }
+.workspace-field label span { font-size: 11px; font-weight: 400; color: #6b7b92; }
+.workspace-field input, .workspace-field textarea { display: block; box-sizing: border-box; width: 100%; padding: 12px 14px; border: 1px solid #cbd6e5; border-radius: 8px; color: #17243b; background: #fff; font: 14px/1.6 Arial, Helvetica, sans-serif; transition: border-color .15s, box-shadow .15s; }
+.workspace-field textarea { resize: vertical; min-height: 96px; }
+.workspace-field input::placeholder, .workspace-field textarea::placeholder { color: #8491a5; }
+.workspace-field input:focus, .workspace-field textarea:focus { outline: 0; border-color: #5073a6; box-shadow: 0 0 0 3px #5073a615; }
+.workspace-field small { display: block; color: #6b7b92; font-size: 11px; line-height: 1.5; margin-top: 7px; }
+.workspace-nav :focus-visible, .workspace-dialog :focus-visible { outline: 2px solid #5073a6; outline-offset: 3px; }
+@media (max-width: 700px) {
+  .workspace-nav-inner { padding: 16px; flex-wrap: wrap; gap: 16px; }
+  .workspace-nav-actions { width: 100%; }
+  .workspace-nav-actions .workspace-button { flex: 1; padding: 10px 12px; }
+  .workspace-dialog-header { padding: 24px; }
+  .workspace-dialog-body { padding: 22px 24px; }
+  .workspace-dialog-footer { padding: 18px 24px; }
+}
